@@ -1,0 +1,42 @@
+@page
+@model AspnetCoreTDD.Pages_UserCred.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserCred[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserCred[0].Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.UserCred) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.UserCredID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.UserCredID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.UserCredID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
