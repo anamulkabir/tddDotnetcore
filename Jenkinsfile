@@ -11,6 +11,11 @@ pipeline {
         sh 'dotnet build'
       }
     }
+	stage('Run') {
+      steps {
+        sh 'sudo dotnet run --project AspnetCoreTDD/AspnetCoreTDD.csproj'
+      }
+    }
     stage('Test build') {
       steps {
         sh 'dotnet test'
