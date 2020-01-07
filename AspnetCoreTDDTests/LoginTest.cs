@@ -13,7 +13,7 @@ namespace AspnetCoreTDDTests
         private UserLoginPage _userLogin;
         public LoginTest()
         {
-            _webDriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            _webDriver = new ChromeDriver();
             _userLogin = new UserLoginPage(_webDriver);
             _userLogin.Navigate("UserCred/Create");
         }
