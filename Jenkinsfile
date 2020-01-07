@@ -13,7 +13,8 @@ pipeline {
     }
 	stage('publish-testing') {
       steps {
-		sh 'dotnet publish --project AspnetCoreTDD/AspnetCoreTDD.csproj —-output /var/www/aspnetcoretdd —-configuration release'
+		sh 'sudo systemctl stop aspnetcoretdd.service'
+		sh 'sudo dotnet publish AspnetCoreTDD/AspnetCoreTDD.csproj —-output /var/www/aspnetcoretdd —-configuration release'
         sh 'sudo systemctl restart aspnetcoretdd.service'
       }
     }
