@@ -10,7 +10,14 @@ namespace AspnetCoreTDDTests
         private readonly IWebDriver _driver;
          public AutomateUITest()
         {
-            _driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            // chromeOptions.AddArguments("--whitelist-ip *");
+            // chromeOptions.AddArguments("--proxy-server='direct://'");
+            // chromeOptions.AddArguments("--proxy-bypass-list=*");
+            chromeOptions.AddArguments("--no-sandbox");
+            // options.addArgument("--no-sandbox");
+            // options.addArgument("--disable-dev-shm-usage");
+            _driver = new ChromeDriver(chromeOptions);
         }
         [Fact]
        public void Get_WhenExecuted_ReturnsIndexView()
