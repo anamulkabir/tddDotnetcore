@@ -25,7 +25,7 @@ namespace AspnetCoreTDDTests
         [Fact]
         public void Invalid_UserNamePattern_False()
         {
-            _userLogin.PopulateUserName("mak123456");
+            _userLogin.PopulateUserName("mak12");
             _userLogin.PopulatePassword("12345");
             _userLogin.ClickCreate();
              Assert.Contains("Invalid User Name", _userLogin.UserNameErrorMessage);

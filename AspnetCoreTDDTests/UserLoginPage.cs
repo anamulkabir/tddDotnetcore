@@ -4,7 +4,7 @@ namespace AspnetCoreTDDTests
     public class UserLoginPage
     {
         private readonly IWebDriver _driver;
-        private const string URI = "http://localhost:5001/";
+        private const string URI = "http://localhost:5000/";
 
         private IWebElement UserNameElement => _driver.FindElement(By.Id("UserCred_UserName"));
         private IWebElement PasswordElement => _driver.FindElement(By.Id("UserCred_Password"));

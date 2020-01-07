@@ -22,7 +22,7 @@ namespace AspnetCoreTDDTests
        public void Get_WhenExecuted_ReturnsIndexView()
        {
            _driver.Navigate()
-        .GoToUrl("http://localhost:5001");
+        .GoToUrl("http://localhost:5000");
         // Assert.Equal("Home page", _driver.Title);
         Assert.Contains("building Web apps with ASP.NET Core", _driver.PageSource);
        }
