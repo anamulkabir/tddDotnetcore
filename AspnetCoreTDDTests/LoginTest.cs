@@ -14,12 +14,9 @@ namespace AspnetCoreTDDTests
         public LoginTest()
         {
            ChromeOptions chromeOptions = new ChromeOptions();
-            // chromeOptions.AddArguments("--whitelist-ip *");
-            // chromeOptions.AddArguments("--proxy-server='direct://'");
-            // chromeOptions.AddArguments("--proxy-bypass-list=*");
             chromeOptions.AddArguments("--no-sandbox");
-            // options.addArgument("--no-sandbox");
-            // options.addArgument("--disable-dev-shm-usage");
+            chromeOptions.AddArguments("--remote-debugging-port=9222");
+            chromeOptions.AddArguments("--headless");
             chromeOptions.BinaryLocation = "/usr/bin/google-chrome";
             _webDriver = new ChromeDriver(chromeOptions);
             _userLogin = new UserLoginPage(_webDriver);

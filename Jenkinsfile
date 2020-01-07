@@ -8,6 +8,7 @@ pipeline {
     }
     stage('build') {
       steps {
+		sh 'sudo dotnet restore'
         sh 'dotnet build'
       }
     }

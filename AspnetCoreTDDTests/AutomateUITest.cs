@@ -11,7 +11,10 @@ namespace AspnetCoreTDDTests
          public AutomateUITest()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("--no-sandbox"); 
+            chromeOptions.AddArguments("--no-sandbox");
+            chromeOptions.AddArguments("--remote-debugging-port=9222");
+            chromeOptions.AddArguments("--headless");
+
             chromeOptions.BinaryLocation = "/usr/bin/google-chrome";
             _driver = new ChromeDriver(chromeOptions);
         }
