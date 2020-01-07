@@ -20,6 +20,7 @@ namespace AspnetCoreTDDTests
             chromeOptions.AddArguments("--no-sandbox");
             // options.addArgument("--no-sandbox");
             // options.addArgument("--disable-dev-shm-usage");
+            chromeOptions.BinaryLocation = "/usr/bin/google-chrome";
             _webDriver = new ChromeDriver(chromeOptions);
             _userLogin = new UserLoginPage(_webDriver);
             _userLogin.Navigate("UserCred/Create");
