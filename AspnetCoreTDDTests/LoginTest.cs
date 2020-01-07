@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Reflection;
 using Xunit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -11,7 +13,7 @@ namespace AspnetCoreTDDTests
         private UserLoginPage _userLogin;
         public LoginTest()
         {
-            _webDriver = new ChromeDriver();
+            _webDriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             _userLogin = new UserLoginPage(_webDriver);
             _userLogin.Navigate("UserCred/Create");
         }
