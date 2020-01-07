@@ -13,13 +13,13 @@ namespace AspnetCoreTDDTests
         private UserLoginPage _userLogin;
         public LoginTest()
         {
-           ChromeOptions options = new ChromeOptions();
-           options.AddArguments("--no-sandbox");
-           options.AddArguments("--headless");
-           options.AddArguments("--disable-dev-shm-usage");
+           ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("--whitelist-ip *");
+            chromeOptions.AddArguments("--proxy-server='direct://'");
+            chromeOptions.AddArguments("--proxy-bypass-list=*");
             // options.addArgument("--no-sandbox");
             // options.addArgument("--disable-dev-shm-usage");
-            _webDriver = new ChromeDriver(options);
+            _webDriver = new ChromeDriver(chromeOptions);
             _userLogin = new UserLoginPage(_webDriver);
             _userLogin.Navigate("UserCred/Create");
         }
