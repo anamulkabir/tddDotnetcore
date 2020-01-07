@@ -11,9 +11,10 @@ pipeline {
         sh 'dotnet build'
       }
     }
-	stage('Run') {
+	stage('publish-testing') {
       steps {
-        sh 'sudo dotnet run --project AspnetCoreTDD/AspnetCoreTDD.csproj'
+		sh 'dotnet publish --project AspnetCoreTDD/AspnetCoreTDD.csproj —-output /var/www/aspnetcoretdd —-configuration release'
+        sh 'sudo systemctl restart aspnetcoretdd.service'
       }
     }
     stage('Test build') {
