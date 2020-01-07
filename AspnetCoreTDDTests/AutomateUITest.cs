@@ -11,12 +11,15 @@ namespace AspnetCoreTDDTests
          public AutomateUITest()
         {
             ChromeOptions chromeOptions = new ChromeOptions();
-            // chromeOptions.AddArguments("--whitelist-ip *");
-            // chromeOptions.AddArguments("--proxy-server='direct://'");
-            // chromeOptions.AddArguments("--proxy-bypass-list=*");
-            chromeOptions.AddArguments("--no-sandbox");
-            // options.addArgument("--no-sandbox");
-            // options.addArgument("--disable-dev-shm-usage");
+            chromeOptions.AddArguments("--no-sandbox"); 
+            chromeOptions.AddArguments("--disable-setuid-sandbox");
+            chromeOptions.AddArguments("--remote-debugging-port=9222");
+            chromeOptions.AddArguments("--disable-dev-shm-using"); 
+            chromeOptions.AddArguments("--disable-extensions"); 
+            chromeOptions.AddArguments("--disable-gpu"); 
+            chromeOptions.AddArguments("start-maximized"); 
+            chromeOptions.AddArguments("disable-infobars"); 
+            chromeOptions.AddArguments("--headless") ;
             _driver = new ChromeDriver(chromeOptions);
         }
         [Fact]
