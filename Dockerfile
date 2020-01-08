@@ -18,6 +18,8 @@ WORKDIR /app
 COPY --from=build-env /app/out ./
 ENTRYPOINT ["dotnet", "AspnetCoreTDD.dll"]
 #Run test
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS test-env
 WORKDIR /app
+#COPY AspnetCoreTDDTests/*.csproj ./AspnetCoreTDDTests/
+#WORKDIR /app/AspnetCoreTDD
 RUN dotnet test
