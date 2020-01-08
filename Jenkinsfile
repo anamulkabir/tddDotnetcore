@@ -6,23 +6,18 @@ pipeline {
               checkout scm
         }
     }
-    stage('build') {
-      steps {
-		sh 'sudo dotnet restore'
-        sh 'dotnet build'
-      }
-    }
-	stage('publish-testing') {
-      steps {
-		sh 'sudo systemctl stop aspnetcoretdd.service'
-		sh 'sudo dotnet publish ./AspnetCoreTDD/ --output /var/www/aspnetcoretdd --configuration release'
-        sh 'sudo systemctl restart aspnetcoretdd.service'
-      }
-    }
-    stage('Test build') {
+    stage('Build docker') {
+		agent {
+			dockerfile true
+		}
       steps {
         sh 'dotnet test'
       }
     }
+  }
+   post {
+	always {
+	 sh 'docker system prune -f'
+	}
   }
 }
