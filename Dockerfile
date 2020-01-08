@@ -21,5 +21,11 @@ ENTRYPOINT ["dotnet", "AspnetCoreTDD.dll"]
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS test-env
 WORKDIR /app
 #COPY AspnetCoreTDDTests/*.csproj ./AspnetCoreTDDTests/
-#WORKDIR /app/AspnetCoreTDD
+WORKDIR /app
+COPY AspnetCoreTDDTests/*.csproj ./AspnetCoreTDDTests/
+WORKDIR /app/AspnetCoreTDDTests
+RUN dotnet restore
+COPY AspnetCoreTDDTests/. ./
+RUN dotnet build
+
 RUN dotnet test
