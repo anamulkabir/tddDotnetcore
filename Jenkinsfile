@@ -10,8 +10,8 @@ pipeline {
 		agent {
 			dockerfile true
 		}
-      steps {
-        sh 'dotnet test'
+		steps {
+			sh 'dotnet test'
       }
     }
   }
