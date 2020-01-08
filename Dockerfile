@@ -39,9 +39,9 @@ RUN apt-get install -y google-chrome-stable
 ENV CHROMEDRIVER_VERSION 79.0.3945.36
 ENV CHROMEDRIVER_DIR /chromedriver
 RUN mkdir $CHROMEDRIVER_DIR
-https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
+#https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
 # Download and install Chromedriver
-RUN wget -q --continue -P $CHROMEDRIVER_DIR "https://chromedriver.storage.googleapis.com//$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+RUN wget -q --continue -P $CHROMEDRIVER_DIR "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
 RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d /usr/bin/google-chrome
 
 # Put Chromedriver into the PATH
