@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage ('Code pull'){
         steps{
@@ -14,10 +14,5 @@ pipeline {
         sh 'dotnet test'
       }
     }
-  }
-   post {
-	always {
-	 sh 'docker system prune -f'
-	}
   }
 }
