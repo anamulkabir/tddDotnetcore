@@ -11,7 +11,7 @@ pipeline {
 			dockerfile true
 		}
 		steps {
-			echo 'building complete'
+			sh 'dotnet --version'
       }
     }
   }
