@@ -11,7 +11,7 @@ pipeline {
 			dockerfile true
 		}
 		steps {
-			sh 'dotnet test'
+			echo 'building complete'
       }
     }
   }
