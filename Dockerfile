@@ -43,9 +43,9 @@ RUN mkdir $CHROMEDRIVER_DIR
 #https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
 # Download and install Chromedriver
 RUN wget -q --continue -P $CHROMEDRIVER_DIR "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d /usr/bin/google-chrome
+RUN unzip $CHROMEDRIVER_DIR/chromedriver* -d $CHROMEDRIVER_DIR
 
 # Put Chromedriver into the PATH
-# ENV PATH $CHROMEDRIVER_DIR:$PATH
+ENV PATH $CHROMEDRIVER_DIR:$PATH
 
 RUN dotnet test
