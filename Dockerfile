@@ -15,7 +15,7 @@ RUN dotnet publish ./AspnetCoreTDD/ -c Release -o out
 EXPOSE 5000/tcp
 EXPOSE 80/tcp
 WORKDIR /app/out
-ENTRYPOINT  ["dotnet", "AspnetCoreTDD.dll"]
+CMD  ["dotnet", "AspnetCoreTDD.dll"]
 # Build runtime image
 #FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 #WORKDIR /app
