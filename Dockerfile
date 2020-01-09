@@ -21,6 +21,6 @@ COPY --from=build-env /app/out ./
 EXPOSE 5001/tcp
 EXPOSE 80/tcp
 #ENTRYPOINT  ["dotnet", "AspnetCoreTDD.dll"]
-ENTRYPOINT  ["dotnet", "run --urls=http://localhost:5001/"]
+CMD  ["dotnet", "run --urls=http://localhost:5001/"]
 #Run test
 
