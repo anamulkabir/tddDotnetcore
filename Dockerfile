@@ -20,6 +20,7 @@ COPY --from=build-env /app/out ./
 #RUN apt-get -y install wget
 EXPOSE 5000/tcp
 EXPOSE 80/tcp
-ENTRYPOINT  ["dotnet", "AspnetCoreTDD.dll"]
+#ENTRYPOINT  ["dotnet", "AspnetCoreTDD.dll"]
+ENTRYPOINT  ["dotnet", "run"]
 #Run test
 
