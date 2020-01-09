@@ -20,6 +20,6 @@ RUN apt-get update
 RUN apt-get -y install wget
 #EXPOSE 5000/tcp
 EXPOSE 80/tcp
-ENTRYPOINT  ["dotnet", "AspnetCoreTDD.dll"]
+CMD  ["dotnet", "AspnetCoreTDD.dll"]
 #Run test
 
