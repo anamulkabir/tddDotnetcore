@@ -9,6 +9,7 @@ RUN dotnet restore
 COPY AspnetCoreTDD/. ./AspnetCoreTDD/
 COPY AspnetCoreTDDTests/. ./AspnetCoreTDDTests/
 RUN dotnet build
+RUN hostname
 
 #WORKDIR /app/AspnetCoreTDD
 RUN dotnet publish ./AspnetCoreTDD/ -c Release -o out
@@ -18,6 +19,7 @@ WORKDIR /app
 COPY --from=build-env /app/out ./
 RUN apt-get update
 RUN apt-get -y install wget
+RUN hostname
 CMD ["dotnet", "AspnetCoreTDD.dll"]
 #Run test
 
