@@ -12,7 +12,7 @@ RUN dotnet build
 
 #WORKDIR /app/AspnetCoreTDD
 RUN dotnet publish ./AspnetCoreTDD/ -c Release -o out
-EXPOSE 5000/tcp
+EXPOSE 4300/tcp
 EXPOSE 80/tcp
 WORKDIR /app/out
 CMD  ["dotnet", "AspnetCoreTDD.dll"]
