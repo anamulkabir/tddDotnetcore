@@ -13,9 +13,9 @@ pipeline {
 		steps {
 			sh 'hostname'
 			sh 'dotnet --version'
-			sh 'wget http://localhost/
-			sh 'wget http://localhost:5000/
-			sh 'wget http://localhost:5001/
+			sh 'wget http://localhost/'
+			sh 'wget http://localhost:5000/'
+			sh 'wget http://localhost:5001/'
       }
     }
   }
