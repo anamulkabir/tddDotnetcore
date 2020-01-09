@@ -18,3 +18,4 @@ WORKDIR /app
 COPY --from=build-env /app/out ./
 CMD ["dotnet", "AspnetCoreTDD.dll"]
 #Run test
+ENTRYPOINT ["dotnet","--version"]
