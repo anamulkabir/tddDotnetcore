@@ -16,10 +16,10 @@ RUN dotnet publish ./AspnetCoreTDD/ -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
 COPY --from=build-env /app/out ./
-#RUN apt-get update
-#RUN apt-get -y install wget
+RUN apt-get update
+RUN apt-get -y install wget
 #EXPOSE 5000/tcp
-#EXPOSE 80/tcp
+EXPOSE 80/tcp
 ENTRYPOINT  ["dotnet", "AspnetCoreTDD.dll"]
 #Run test
 

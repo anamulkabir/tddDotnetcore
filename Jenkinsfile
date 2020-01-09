@@ -12,6 +12,7 @@ pipeline {
 		}
 		steps {
 			sh 'hostname'
+			sh 'wget http:\\localhost\'
       }
     }
   }
