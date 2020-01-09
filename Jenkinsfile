@@ -12,7 +12,6 @@ pipeline {
 		}
 		steps {
 			sh 'hostname'
-			sh 'wget http://localhost:5000/'
 			sh 'wget http://localhost:5001/'
       }
     }
