@@ -11,7 +11,7 @@ pipeline {
 			dockerfile true
 		}
 		steps {
-			sh 'ls -la /app'
+			sh 'ls -la'
       }
     }
   }
